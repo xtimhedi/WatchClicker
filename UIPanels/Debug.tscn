@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://fgpsmuwr2e3w"]
+
+[ext_resource type="Script" uid="uid://b4oq78ixtbjpq" path="res://Scripts/UiScreen.cs" id="1_fsdkq"]
+[ext_resource type="Theme" uid="uid://by8x62eaqy3p6" path="res://global.tres" id="1_lb2dh"]
+[ext_resource type="Script" uid="uid://dvjxw1kar3err" path="res://Scripts/WatchPanel.cs" id="3_nrh7f"]
+[ext_resource type="Script" uid="uid://dr0sskj5quilo" path="res://UIPanels/Debug.cs" id="4_lb2dh"]
+
+[node name="Debug" type="Control" unique_id=512563085]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_lb2dh")
+script = ExtResource("1_fsdkq")
+metadata/_custom_type_script = "uid://b4oq78ixtbjpq"
+
+[node name="WatchPanel" type="PanelContainer" parent="." unique_id=102471083]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 320.0
+script = ExtResource("3_nrh7f")
+metadata/_custom_type_script = "uid://dvjxw1kar3err"
+metadata/_edit_use_anchors_ = true
+
+[node name="WatchMenuContainer" type="Control" parent="WatchPanel" unique_id=1046958609]
+layout_mode = 2
+script = ExtResource("4_lb2dh")
+metadata/_custom_type_script = "uid://p3l0tc5i5i36"
+
+[node name="DebugTitleText" type="Label" parent="WatchPanel/WatchMenuContainer" unique_id=304895455]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "Debug Menu"
+
+[node name="closegame" type="Button" parent="WatchPanel/WatchMenuContainer" unique_id=398633512]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "0xAAAC"
+
+[connection signal="pressed" from="WatchPanel/WatchMenuContainer/closegame" to="WatchPanel/WatchMenuContainer" method="QuitGame"]

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://b08ahxtsca3me"]
+
+[ext_resource type="Theme" uid="uid://by8x62eaqy3p6" path="res://global.tres" id="1_xel2s"]
+[ext_resource type="Script" uid="uid://cah0oonal3ixe" path="res://UIPanels/IngameMenu.cs" id="2_s5y68"]
+[ext_resource type="Script" uid="uid://dvjxw1kar3err" path="res://Scripts/WatchPanel.cs" id="3_0sypi"]
+[ext_resource type="Script" uid="uid://dr0sskj5quilo" path="res://UIPanels/Debug.cs" id="4_dl2p3"]
+
+[node name="IngameMenu" type="Control" unique_id=546444633]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_xel2s")
+script = ExtResource("2_s5y68")
+metadata/_custom_type_script = "uid://b4oq78ixtbjpq"
+
+[node name="WatchPanel" type="PanelContainer" parent="." unique_id=631756437]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 320.0
+script = ExtResource("3_0sypi")
+metadata/_custom_type_script = "uid://dvjxw1kar3err"
+metadata/_edit_use_anchors_ = true
+
+[node name="WatchMenuContainer" type="Control" parent="WatchPanel" unique_id=151711853]
+layout_mode = 2
+script = ExtResource("4_dl2p3")
+metadata/_custom_type_script = "uid://p3l0tc5i5i36"
+
+[node name="Label" type="Label" parent="WatchPanel/WatchMenuContainer" unique_id=210860075]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Game Menu"
+
+[node name="Button" type="Button" parent="WatchPanel/WatchMenuContainer" unique_id=645508669]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Stats"
+
+[connection signal="pressed" from="WatchPanel/WatchMenuContainer/Button" to="." method="Stats"]

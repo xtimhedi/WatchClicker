@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bi5f5kc66w4pt"]
+
+[ext_resource type="Script" uid="uid://bxt7dwd1fkg2s" path="res://MainGame/Main.cs" id="1_yaf0j"]
+[ext_resource type="Texture2D" uid="uid://bfkbrhc46bpyv" path="res://cookie.png" id="2_w4fhc"]
+[ext_resource type="Script" uid="uid://d2mqg76nhtonf" path="res://MainGame/CookieSprite.cs" id="3_w4fhc"]
+[ext_resource type="Script" uid="uid://c4rqfui3si8b" path="res://MainGame/CookieArea.cs" id="4_4ba0l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5p76"]
+radius = 246.71732
+
+[node name="Main" type="Node2D" unique_id=405078807]
+script = ExtResource("1_yaf0j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=509691263]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=809495825]
+offset_right = 37.0
+offset_bottom = 31.0
+text = "dbg"
+
+[node name="CookieSprite" type="Sprite2D" parent="." unique_id=780975411]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_w4fhc")
+script = ExtResource("3_w4fhc")
+
+[node name="Area2D" type="Area2D" parent="CookieSprite" unique_id=579128929]
+script = ExtResource("4_4ba0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CookieSprite/Area2D" unique_id=583138500]
+shape = SubResource("CircleShape2D_o5p76")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=36193494]
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="OpenDebug"]

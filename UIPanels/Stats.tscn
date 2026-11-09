@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://docw7w01eu0hr"]
+
+[ext_resource type="Theme" uid="uid://by8x62eaqy3p6" path="res://global.tres" id="1_1vkls"]
+[ext_resource type="Script" uid="uid://17liawx854ut" path="res://UIPanels/Stats.cs" id="2_368al"]
+[ext_resource type="Script" uid="uid://dvjxw1kar3err" path="res://Scripts/WatchPanel.cs" id="3_83vx0"]
+[ext_resource type="Script" uid="uid://dr0sskj5quilo" path="res://UIPanels/Debug.cs" id="4_msf51"]
+
+[node name="Stats" type="Control" unique_id=1148688183]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_1vkls")
+script = ExtResource("2_368al")
+metadata/_custom_type_script = "uid://b4oq78ixtbjpq"
+
+[node name="WatchPanel" type="PanelContainer" parent="." unique_id=1247206212]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 320.0
+script = ExtResource("3_83vx0")
+metadata/_custom_type_script = "uid://dvjxw1kar3err"
+metadata/_edit_use_anchors_ = true
+
+[node name="WatchMenuContainer" type="Control" parent="WatchPanel" unique_id=1811666009]
+layout_mode = 2
+script = ExtResource("4_msf51")
+metadata/_custom_type_script = "uid://p3l0tc5i5i36"
+
+[node name="Label" type="Label" parent="WatchPanel/WatchMenuContainer" unique_id=1391752129]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 24
+text = "Stats"

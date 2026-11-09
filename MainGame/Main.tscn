@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bi5f5kc66w4pt"]
 
 [ext_resource type="Script" uid="uid://bxt7dwd1fkg2s" path="res://MainGame/Main.cs" id="1_yaf0j"]
+[ext_resource type="Script" uid="uid://bkspuwc1kxgjy" path="res://Scripts/GearKeypad.cs" id="2_fcgsw"]
 [ext_resource type="Texture2D" uid="uid://bfkbrhc46bpyv" path="res://cookie.png" id="2_w4fhc"]
 [ext_resource type="Script" uid="uid://d2mqg76nhtonf" path="res://MainGame/CookieSprite.cs" id="3_w4fhc"]
 [ext_resource type="Script" uid="uid://c4rqfui3si8b" path="res://MainGame/CookieArea.cs" id="4_4ba0l"]
@@ -17,6 +18,17 @@ script = ExtResource("1_yaf0j")
 offset_right = 37.0
 offset_bottom = 31.0
 text = "dbg"
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=399511285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_fcgsw")
 
 [node name="CookieSprite" type="Sprite2D" parent="." unique_id=780975411]
 scale = Vector2(0.6, 0.6)
